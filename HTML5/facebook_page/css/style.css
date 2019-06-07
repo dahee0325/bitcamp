@@ -43,14 +43,14 @@ a {
 }
 
 
-#login > form > table > tr > td > input {
+#login > form > table input {
     width: 142px;
     padding: 3px 3px 4px;
     border: 1px solid black;
     background-color: white;
 }
 
-#login > form > table > tr > td > input[type=submit] {
+#login > form > table input[type=submit] {
     width: 50px;
     height: 24px;
     font-size: 12px;
@@ -62,7 +62,7 @@ a {
     border-radius: 2px;
 }
 
-#login > form > table > tr > td > a {
+#login > form > table a {
     color: #9cb4d8;
 }
 
@@ -106,7 +106,7 @@ a {
     padding: 20px 0;
 }
 
-#join > form > table > tr > td > input {
+#join > form > table input {
     padding: 8px 10px;
     border: 1px solid #bdc7d8;
     border-radius: 5px;
