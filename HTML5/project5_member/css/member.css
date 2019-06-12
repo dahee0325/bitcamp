@@ -80,7 +80,7 @@
             text-decoration: underline;
         }
 
-        #editbox {
+        #editBox {
             width: 300px;
             background-color: #f8cbc6;
             padding: 20px;
@@ -93,11 +93,11 @@
             margin-top: -150px;
             display: none;
         }
-        #editbox table {
+        #editBox table {
             width: 100%;
         }
         
-        #editbox a {
+        #editBox a {
             text-decoration: none;
             font-size: 15px;
             float: right;
@@ -105,23 +105,23 @@
             color: black;
         }
 
-        #editbox a:hover {
+        #editBox a:hover {
             text-decoration: underline;
             cursor: pointer;
         }
 
-        #editbox td {
+        #editBox td {
             padding: 5px;
         }
 
-        #editbox td:first-of-type {
+        #editBox td:first-of-type {
             font-size: 15px;
         }
 
-        #editbox form {
+        #editBox form {
             margin: 15px;
         }
         
-        #editbox input[type=submit] {
+        #editBox input[type=submit] {
             line-height: 20px;
         }
