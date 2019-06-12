@@ -89,12 +89,12 @@ function btn_true() {
     var check1 = document.getElementById('check1');
     var check2 = document.getElementById('check2');
     var p = document.getElementById('btn_false_p');
-    
+
     if (!(check1.checked && check2.checked)) {
         p.style.display = 'block';
         return false;
     } else {
-        location.href='naver_join.html';
+        location.href = 'naver_join.html';
     }
 
 }

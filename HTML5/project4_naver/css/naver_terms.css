@@ -17,7 +17,7 @@
            cursor: pointer;
        }
 
-       #wrap {
+       body {
            background-color: #f5f6f7;
        }
 
@@ -56,8 +56,6 @@
        }
 
        #header > a {
-           color: #08a600;
-           height: 25px;
            background-image: url(https://static.nid.naver.com/images//ui/join/m_naver_logo.png);
            background-repeat: no-repeat;
            background-size: 240px auto;
