@@ -1,100 +1,53 @@
-function all_check() {
+$(document).ready(function () {
 
-    var all = document.getElementById('all_check');
+    //allCheck 의 상태가변경이 되면
+    $('#all_check').change(function () {
 
-    var check = [];
-    check.push(document.getElementById('check1'));
-    check.push(document.getElementById('check2'));
-    check.push(document.getElementById('check3'));
-    check.push(document.getElementById('check4'));
+        //this의 checked 속성을 가져옴
+        var chk = $(this).prop('checked');
+        $('#all_check+label').css('background-image', 'url(https://static.nid.naver.com/images/ui/myinfo/pc_check_on_l_24.png)');
 
-    var span = [];
-    span.push(document.getElementById('check1_l'));
-    span.push(document.getElementById('check2_l'));
-    span.push(document.getElementById('check3_l'));
-    span.push(document.getElementById('check4_l'));
-
-    if (all.checked) {
-        all.checked = true;
-        document.getElementById('allcheck_l').style.backgroundImage = 'url(https://static.nid.naver.com/images/ui/myinfo/pc_check_on_l_24.png)';
-        for (var i = 0; i < check.length; i++) {
-            check[i].checked = true;
-            span[i].style.backgroundImage = 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_on_s_20.png)';
+        if (chk) {
+            $('#terms_wrap input').prop('checked', true);
+            $('#check label').css('background-image', 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_on_s_20.png)');
+        } else {
+            $('#all_check+label').css('background-image', 'url(https://static.nid.naver.com/images/ui/myinfo/pc_check_off_24.png)');
+            $('#terms_wrap input').prop('checked', false);
+            $('#check label').css('background-image', 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_off_s_20.png)');
         }
-    } else if (!all.checked) {
-        all.checked = false;
-        document.getElementById('allcheck_l').style.backgroundImage = 'url(https://static.nid.naver.com/images/ui/myinfo/pc_check_off_24.png)';
-        for (var i = 0; i < check.length; i++) {
-            check[i].checked = false;
-            span[i].style.backgroundImage = 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_off_s_20.png)';
+
+    });
+
+
+    $('#check input').change(function () {
+
+        var check = $(this).prop('checked');
+
+        if (check) {
+            $(this).next().css('background-image', 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_on_s_20.png)');
+        } else {
+            $(this).next().css('background-image', 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_off_s_20.png)');
+            $('#all_check').prop('checked', false);
+            $('#all_check+label').css('background-image', 'url(https://static.nid.naver.com/images/ui/myinfo/pc_check_off_24.png)');
         }
-    }
-}
+
+        if ($('#check1').prop('checked') && $('#check2').prop('checked') && $('#check3').prop('checked') && $('#check4').prop('checked')) {
+            $('#all input').prop('checked', true);
+            $('#all_check+label').css('background-image', 'url(https://static.nid.naver.com/images/ui/myinfo/pc_check_on_l_24.png)');
+        }
+
+    });
 
 
-function select1() {
+    $('#btn_true').click(function () {
 
-    var check1 = document.getElementById('check1');
-    var check1_l = document.getElementById('check1_l');
+        if ($('#check1').prop('checked') && $('#check2').prop('checked')) {
+            location.href = 'naver_join.html';
 
-    if (check1.checked) {
-        check1_l.style.backgroundImage = 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_on_s_20.png)';
-    } else {
-        check1_l.style.backgroundImage = 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_off_s_20.png)';
-    }
-}
+        } else {
+            $('#btn_false_p').css('display', 'block');
+        }
 
+    });
 
-function select2() {
-
-    var check2 = document.getElementById('check2');
-    var check2_l = document.getElementById('check2_l');
-
-    if (check2.checked) {
-        check2_l.style.backgroundImage = 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_on_s_20.png)';
-    } else {
-        check2_l.style.backgroundImage = 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_off_s_20.png)';
-    }
-}
-
-
-function select3() {
-
-    var check3 = document.getElementById('check3');
-    var check3_l = document.getElementById('check3_l');
-
-    if (check3.checked) {
-        check3_l.style.backgroundImage = 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_on_s_20.png)';
-    } else {
-        check3_l.style.backgroundImage = 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_off_s_20.png)';
-    }
-}
-
-
-function select4() {
-
-    var check4 = document.getElementById('check4');
-    var check4_l = document.getElementById('check4_l');
-
-    if (check4.checked) {
-        check4_l.style.backgroundImage = 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_on_s_20.png)';
-    } else {
-        check4_l.style.backgroundImage = 'url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_off_s_20.png)';
-    }
-}
-
-
-function btn_true() {
-
-    var check1 = document.getElementById('check1');
-    var check2 = document.getElementById('check2');
-    var p = document.getElementById('btn_false_p');
-
-    if (!(check1.checked && check2.checked)) {
-        p.style.display = 'block';
-        return false;
-    } else {
-        location.href = 'naver_join.html';
-    }
-
-}
+});
