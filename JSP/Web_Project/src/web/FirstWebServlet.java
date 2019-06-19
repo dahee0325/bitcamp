@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class WebServlet2
  */
-@WebServlet("/first")
+
+//name= 서블릿 이름을 지정해준다.
+@WebServlet(name="servlet", urlPatterns ="/first")
 
 //HttpServlet 을 상속해줘야지 servlet 클래스라고 불릴수 있다
 public class FirstWebServlet extends HttpServlet {
