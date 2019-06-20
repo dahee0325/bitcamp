@@ -36,7 +36,7 @@ img {
 
 	<%--상대경로 : memberInsert는 자신과 같은 경로안에 있기 때문에--%>
 	<a href="memberInsert.jsp">회원가입</a>
-	<img alt="이미지" src="../img/mini1.jpg">
+	<img alt="이미지" src="../../img/mini1.jpg">
 	<a href="file.jsp">파일</a>
 
 </body>
