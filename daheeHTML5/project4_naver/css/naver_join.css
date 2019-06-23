@@ -57,11 +57,11 @@
            height: 30px;
        }
 
-       #contents p {
+       #contents h5,#contents h4 {
            color: red;
-           display: none;
            font-size: 12px;
            margin: 9px 0 -2px;
+           font-weight: normal;
        }
 
        #id_div input {
@@ -83,6 +83,7 @@
        #userPw + label span {
            background-image: url(https://static.nid.naver.com/images/ui/join/pc_icon_pass_180417.png);
            background-repeat: no-repeat;
+           background-size: 18px;
            border: 0;
            display: inline-block;
            vertical-align: middle;
@@ -108,12 +109,12 @@
            display: inline-block;
        }
 
-       #brith_div div {
+       .brith_span {
            display: inline;
            padding: 0 0 0 7px;
        }
 
-       #brith_div div:first-child {
+       .brith_span:first-child {
            padding: 0;
        }
 
@@ -137,12 +138,12 @@
            width: 70%;
        }
 
-       #phone_div div span:last-child {
+       #phone_div div:last-child span {
            width: 100%;
            background-color: #f7f7f7;
        }
 
-       #phone_div div span:last-child input {
+       #phone_div div:last-child span input {
            background-color: #f7f7f7;
        }
 
@@ -160,7 +161,8 @@
            cursor: pointer;
        }
 
-       #btn a {
+       #btn input {
+           width: 100%;
            display: block;
            background-color: #08a600;
            color: white;
@@ -168,8 +170,8 @@
            font-weight: 700;
            text-align: center;
            cursor: pointer;
-           line-height: 60px;
            margin: 20px 0;
+           height: 60px;
        }
 
 
