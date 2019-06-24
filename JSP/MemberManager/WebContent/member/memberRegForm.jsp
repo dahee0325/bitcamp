@@ -29,19 +29,19 @@
 					<tr>
 						<td>아 이 디</td>
 						<%-- required : 필수사항--%>
-						<td><input type="email" name="uId" placeholder="아이디 또는 이메일" required></td>
+						<td><input type="email" name="id" placeholder="아이디 또는 이메일" required></td>
 					</tr>
 					<tr>
 						<td>비밀번호</td>
-						<td><input type="password" name="uPw" required></td>
+						<td><input type="password" name="pw" required></td>
 					</tr>
 					<tr>
 						<td>이    름</td>
-						<td><input type="text" name="uName" required></td>
+						<td><input type="text" name="name" required></td>
 					</tr>
 					<tr>
 						<td>사    진</td>
-						<td><input type="file" name="uPhoto"></td>
+						<td><input type="file" name="photo"></td>
 					</tr>
 					<tr>
 						<td colspan="2"><input type="submit" value="회원가입"></td>

@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+<jsp:useBean id="loginInfo" class="member.userInfo" scope="request" />
+<jsp:setProperty property="id" name="loginInfo"/>
+<jsp:setProperty property="pw" name="loginInfo"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,16 +17,6 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
-<%
-	String userId = request.getParameter("uId");
-	String userPw = request.getParameter("uPw");
-	
-	if(userId != null && userPw != null && userId.equals("admin") && userPw.equals("admin")){
-		
-		response.sendRedirect(request.getContextPath());
-		
-	}
-%>
 
 	<div id="wrap">
 		<%-- header 시작 --%>
@@ -38,11 +34,11 @@
 				<table>
 					<tr>
 						<td>아 이 디</td>
-						<td><input type="text" name="uId" value="<%= userId %>"></td>
+						<td><%= loginInfo.getId() %></td>
 					</tr>
 					<tr>
 						<td>비밀번호</td>
-						<td><input type="text" name="uPw" value="<%= userPw %>"></td>
+						<td><%= loginInfo.getPw() %></td>
 					</tr>
 				</table>
 		</div>

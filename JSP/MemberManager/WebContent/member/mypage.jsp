@@ -1,17 +1,17 @@
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("utf-8");
 	Date date = new Date();
 %>
 <jsp:useBean id="userInfo" class="member.userInfo" scope="session"/>
-<jsp:setProperty property="*" name="userInfo"/>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입</title>
+<title>마이페이지</title>
 <link href="/mm/css/default.css" rel="stylesheet" type="text/css">
 <style>
 </style>
@@ -29,37 +29,39 @@
 
 		<%-- contents 시작 --%>
 		<div id="contents">
-			<h3>회원가입 요청 페이지</h3>
+			<h3>My Page</h3>
 			<hr>
+			<form>
 				<table>
 					<tr>
 						<td>아 이 디</td>
-						<%-- required : 필수사항--%>
-						<td><input type="text" name="id" value="<%= userInfo.getId() %>" required></td>
+						<td><%= userInfo.getId() %></td>
 					</tr>
 					<tr>
 						<td>비밀번호</td>
-						<td><input type="password" name="pw" value="<%= userInfo.getPw() %>" required></td>
+						<td><%= userInfo.getPw() %></td>
 					</tr>
 					<tr>
-						<td>이 름</td>
-						<td><input type="text" name="name" value="<%= userInfo.getName() %>" required></td>
+						<td>이    름</td>
+						<td><%= userInfo.getName() %></td>
 					</tr>
 					<tr>
-						<td>사 진</td>
-						<td><input type="file" value="<%= userInfo.getPhoto() %>" name="photo"></td>
+						<td>사    진</td>
+						<td><%= userInfo.getPhoto() %></td>
 					</tr>
 					<tr>
 						<td>가입시간</td>
-						<td><input type="text" value="<%= userInfo.getRegDate().format(date) %>" name="regDate"></td>
+						<td><%= userInfo.getRegDate().format(date) %></td>
 					</tr>
 				</table>
+			</form>
 		</div>
 		<%-- contents 끝 --%>
 
 		<%-- footer 시작 --%>
 		<%@ include file="../frame/footer.jsp"%>
 		<%-- footer 끝 --%>
+
 	</div>
 </body>
 </html>
