@@ -1,5 +1,17 @@
+<%@page import="util.CookieBox"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	CookieBox cBox = new CookieBox(request);
+	String id = request.getParameter("id");
+	String val = "";
+	
+	if(cBox.getValue("CHECK").equals("yes")) {
+		val = cBox.getValue("ID");
+	} else if(cBox.getValue("CHECK").equals("no")) {
+		val = "";
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +25,11 @@
 <body>
 	<div id="wrap">
 		<%-- header 시작 --%>
-		<%@ include file="../frame/header.jsp"%>
+		<%@ include file="../../frame/header.jsp"%>
 		<%-- header 끝 --%>
 
 		<%-- nav 시작 --%>
-		<%@ include file="../frame/nav.jsp"%>
+		<%@ include file="../../frame/nav2.jsp"%>
 		<%-- nav 끝 --%>
 
 		<%-- contents 시작 --%>
@@ -28,14 +40,14 @@
 				<table>
 					<tr>
 						<td>아 이 디</td>
-						<td><input type="text" name="id"></td>
+						<td><input type="text" name="id" value="<%= val %>"></td>
 					</tr>
 					<tr>
 						<td>비밀번호</td>
 						<td><input type="password" name="pw"></td>
 					</tr>
 					<tr>
-						<td colspan="2">아이디저장 <input id="ch" type="checkbox"></td>
+						<td colspan="2">아이디저장 <input name="ch" value="1" type="checkbox"></td>
 					</tr>
 					<tr>
 						<td colspan="2"><input type="submit" value="로그인"></td>
@@ -46,7 +58,7 @@
 		<%-- contents 끝 --%>
 
 		<%-- footer 시작 --%>
-		<%@ include file="../frame/footer.jsp"%>
+		<%@ include file="../../frame/footer.jsp"%>
 		<%-- footer 끝 --%>
 
 	</div>
