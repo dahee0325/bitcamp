@@ -5,7 +5,7 @@
 	request.setCharacterEncoding("utf-8");
 	Date date = new Date();
 %>
-<jsp:useBean id="userInfo" class="member.userInfo" scope="session"/>
+<jsp:useBean id="userInfo" class="member.UserInfo" scope="session"/>
 
 <!DOCTYPE html>
 <html>

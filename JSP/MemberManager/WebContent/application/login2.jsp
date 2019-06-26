@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-	request.setCharacterEncoding("utf-8");
-%>
-<jsp:useBean id="loginInfo" class="member.UserInfo" scope="request" />
-<jsp:setProperty property="id" name="loginInfo"/>
-<jsp:setProperty property="pw" name="loginInfo"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,30 +11,34 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
-
 	<div id="wrap">
 		<%-- header 시작 --%>
 		<%@ include file="../frame/member/header.jsp"%>
 		<%-- header 끝 --%>
 
 		<%-- nav 시작 --%>
-		<%@ include file="../frame/member/nav.jsp"%>
+		<%@ include file="../frame/member/nav2.jsp"%>
 		<%-- nav 끝 --%>
 
 		<%-- contents 시작 --%>
 		<div id="contents">
-			<h3>로그인 요청처리페이지</h3>
+			<h3>Login Page</h3>
 			<hr>
+			<form action="loginProcess2.jsp" method="post">
 				<table>
 					<tr>
 						<td>아 이 디</td>
-						<td><%= loginInfo.getId() %></td>
+						<td><input type="text" name="id" required></td>
 					</tr>
 					<tr>
 						<td>비밀번호</td>
-						<td><%= loginInfo.getPw() %></td>
+						<td><input type="password" name="pw" required></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="로그인"></td>
 					</tr>
 				</table>
+			</form>
 		</div>
 		<%-- contents 끝 --%>
 

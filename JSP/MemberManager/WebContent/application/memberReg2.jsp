@@ -1,12 +1,22 @@
+<%@page import="member.UserInfo"%>
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("utf-8");
-	Date date = new Date();
 %>
-<jsp:useBean id="userInfo" class="member.UserInfo" scope="session"/>
+<!-- usebean 액션 테그를 이용한 객체 생성 ( 찾고 -> 없을 때 생성 )  -->
+<jsp:useBean id="userInfo" class="member.UserInfo"/>
+<!-- 생성된 객체에 데이터 바인딩 : 폼의 name 속성과 beans 클래스의 변수 이름이 동일해야한다 !!!!!  -->
 <jsp:setProperty property="*" name="userInfo"/>
+<%
+	if(userInfo.getPhoto() == null){
+		userInfo.setPhoto("noImg.jpg");
+	}
+	// 내장객체에 회원정보 객체를 저장
+	application.setAttribute(userInfo.getId(), userInfo);
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +34,7 @@
 		<%-- header 끝 --%>
 
 		<%-- nav 시작 --%>
-		<%@ include file="../frame/member/nav.jsp"%>
+		<%@ include file="../frame/member/nav2.jsp"%>
 		<%-- nav 끝 --%>
 
 		<%-- contents 시작 --%>
@@ -48,10 +58,6 @@
 					<tr>
 						<td>사 진</td>
 						<td><input type="file" value="<%= userInfo.getPhoto() %>" name="photo"></td>
-					</tr>
-					<tr>
-						<td>가입시간</td>
-						<td><input type="text" value="<%= userInfo.getRegDate().format(date) %>" name="regDate"></td>
 					</tr>
 				</table>
 		</div>
