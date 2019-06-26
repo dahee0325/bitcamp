@@ -1,3 +1,4 @@
+<%@page import="web.LoginInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%-- 
@@ -21,7 +22,17 @@
  	//id값과 pw 값이 같으면 로그인 인증처리
  	if(id != null && pw != null && id.equals(pw)) {
  		//같다면 : 세션에 사용자 데이터 저장, loginChk = true
- 		session.setAttribute("loginId", id); //사용자가 로그인했는지 여부 확인용
+ 		//session.setAttribute("loginId", id); //사용자가 로그인했는지 여부 확인용
+ 		//session.setAttribute("photo", "c:\\");
+ 		//session.setAttribute("grade", 6);
+ 		//session.setAttribute("nocname", "da");
+ 		
+ 		//객체생성
+ 		LoginInfo loginInfo = new LoginInfo(id);
+ 		
+ 		//LoginInfo 라는 이름으로 객체값을 넣음
+ 		session.setAttribute("LoginInfo", loginInfo);
+ 		
  		loginChk = true;
  	}
  	

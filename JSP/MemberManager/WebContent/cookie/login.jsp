@@ -15,27 +15,31 @@
 <%
 	CookieBox cBox = new CookieBox(request);
 	String val = "";
-	
-	if(cBox.getValue("CHECK").equals("yes")) {
-		if(cBox.getValue("ID") != null){
-			val = cBox.getValue("ID");
-			out.println("<script> $(document).ready(function () { $('#ch').prop('checked', true); }); </script>");
-		}else {
-			val="";
+	if(cBox.getValue("CHECK") != null){
+		if(cBox.getValue("CHECK").equals("yes")) {
+			if(cBox.getValue("ID") != null){
+				val = cBox.getValue("ID");
+				out.println("<script> $(document).ready(function () { $('#ch').prop('checked', true); }); </script>");
+			}else {
+				val="";
+				out.println("<script> $(document).ready(function () { $('#ch').prop('checked', false); }); </script>");
+			}		
+		} else if(cBox.getValue("CHECK").equals("no")) {
 			out.println("<script> $(document).ready(function () { $('#ch').prop('checked', false); }); </script>");
-		}		
-	} else if(cBox.getValue("CHECK").equals("no")) {
-		out.println("<script> $(document).ready(function () { $('#ch').prop('checked', false); }); </script>");
-		val = "";
+			val = "";
+		}
+	}else {
+		out.println("<script> alert(\'회원가입해주세요.\'); history.go(-1); </script>");
 	}
+	
 %>
 	<div id="wrap">
 		<%-- header 시작 --%>
-		<%@ include file="../../frame/cookie/c_header.jsp"%>
+		<%@ include file="../frame/cookie/c_header.jsp"%>
 		<%-- header 끝 --%>
 
 		<%-- nav 시작 --%>
-		<%@ include file="../../frame/cookie/c_nav.jsp"%>
+		<%@ include file="../frame/cookie/c_nav.jsp"%>
 		<%-- nav 끝 --%>
 
 		<%-- contents 시작 --%>
@@ -64,7 +68,7 @@
 		<%-- contents 끝 --%>
 
 		<%-- footer 시작 --%>
-		<%@ include file="../../frame/footer.jsp"%>
+		<%@ include file="../frame/member/footer.jsp"%>
 		<%-- footer 끝 --%>
 
 	</div>
