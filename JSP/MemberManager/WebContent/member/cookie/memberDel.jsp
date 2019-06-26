@@ -2,21 +2,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	request.setCharacterEncoding("utf-8");
-
-	String id = request.getParameter("id");
-	String pw = request.getParameter("pw");
-	String name = request.getParameter("name");
-
-	Cookie c1 = CookieBox.createCookie("ID", id, -1);
+	Cookie c1 = CookieBox.createCookie("LOGIN", "", 0);
 	response.addCookie(c1);
-	Cookie c2 = CookieBox.createCookie("PW", pw, -1);
+	Cookie c2 = CookieBox.createCookie("ID", "", 0);
 	response.addCookie(c2);
-	Cookie c3 = CookieBox.createCookie("NAME", name, -1);
+	Cookie c3 = CookieBox.createCookie("PW", "", 0);
 	response.addCookie(c3);
-	Cookie c4 = CookieBox.createCookie("CHECK", "no", -1);
+	Cookie c4 = CookieBox.createCookie("NAME", "", 0);
 	response.addCookie(c4);
-
 %>
 <!DOCTYPE html>
 <html>
@@ -40,7 +33,7 @@
 
 		<%-- contents 시작 --%>
 		<div id="contents">
-			<h1>회원가입이 되었습니다.</h1><br>
+			<h1>회원탈퇴되었습니다.</h1><br>
 		</div>
 		<%-- contents 끝 --%>
 

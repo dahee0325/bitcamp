@@ -1,16 +1,6 @@
 <%@page import="util.CookieBox"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-	CookieBox cBox = new CookieBox(request);
-	String val = "";
-	
-	if(cBox.getValue("CHECK").equals("yes")) {
-		val = cBox.getValue("ID");
-	} else if(cBox.getValue("CHECK").equals("no")) {
-		val = "";
-	}
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,13 +12,30 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
+<%
+	CookieBox cBox = new CookieBox(request);
+	String val = "";
+	
+	if(cBox.getValue("CHECK").equals("yes")) {
+		if(cBox.getValue("ID") != null){
+			val = cBox.getValue("ID");
+			out.println("<script> $(document).ready(function () { $('#ch').prop('checked', true); }); </script>");
+		}else {
+			val="";
+			out.println("<script> $(document).ready(function () { $('#ch').prop('checked', false); }); </script>");
+		}		
+	} else if(cBox.getValue("CHECK").equals("no")) {
+		out.println("<script> $(document).ready(function () { $('#ch').prop('checked', false); }); </script>");
+		val = "";
+	}
+%>
 	<div id="wrap">
 		<%-- header 시작 --%>
-		<%@ include file="../../frame/header.jsp"%>
+		<%@ include file="../../frame/cookie/c_header.jsp"%>
 		<%-- header 끝 --%>
 
 		<%-- nav 시작 --%>
-		<%@ include file="../../frame/nav2.jsp"%>
+		<%@ include file="../../frame/cookie/c_nav.jsp"%>
 		<%-- nav 끝 --%>
 
 		<%-- contents 시작 --%>
@@ -46,7 +53,7 @@
 						<td><input type="password" name="pw"></td>
 					</tr>
 					<tr>
-						<td colspan="2">아이디저장 <input name="ch" value="1" type="checkbox"></td>
+						<td colspan="2">아이디저장 <input id="ch" name="ch" value="1" type="checkbox"></td>
 					</tr>
 					<tr>
 						<td colspan="2"><input type="submit" value="로그인"></td>

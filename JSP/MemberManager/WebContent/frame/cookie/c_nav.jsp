@@ -6,5 +6,7 @@
 		<li><a href="<%= request.getContextPath() %>/member/cookie/index.jsp">홈</a></li>
 		<li><a href="<%= request.getContextPath() %>/member/cookie/login.jsp">로그인</a></li>
 		<li><a href="<%= request.getContextPath() %>/member/cookie/memberRegForm.jsp">회원가입</a></li>
+		<li><a href="<%= request.getContextPath() %>/member/cookie/logout.jsp">로그아웃</a></li>
+		<li><a href="<%= request.getContextPath() %>/member/cookie/memberDel.jsp">회원탈퇴</a></li>
 	</ul>
 </div>

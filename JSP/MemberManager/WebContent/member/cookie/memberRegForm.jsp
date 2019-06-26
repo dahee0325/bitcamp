@@ -13,11 +13,11 @@
 <body>
 	<div id="wrap">
 		<%-- header 시작 --%>
-		<%@ include file="../../frame/header.jsp"%>
+		<%@ include file="../../frame/cookie/c_header.jsp"%>
 		<%-- header 끝 --%>
 
 		<%-- nav 시작 --%>
-		<%@ include file="../../frame/nav2.jsp"%>
+		<%@ include file="../../frame/cookie/c_nav.jsp"%>
 		<%-- nav 끝 --%>
 
 		<%-- contents 시작 --%>

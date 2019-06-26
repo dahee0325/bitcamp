@@ -15,7 +15,9 @@
 <%-- 세션정보를 삭제하여 logout 처리 --%>
 <%-- invalidate() : 현재 있는 세션을 삭제해준다. --%>
 <%
-	request.getSession(false).invalidate();
+	//request.getSession(false).invalidate();
+	//같음
+	session.invalidate();
 %>
 <h1>로그아웃 되었습니다.</h1>
 <a href="viewSession.jsp">viewSession1</a>

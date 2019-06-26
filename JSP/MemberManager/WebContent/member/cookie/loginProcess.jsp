@@ -11,18 +11,22 @@
 	if(id.length() > 0 && pw.length() > 0 && id != null && pw != null) {
 		
 		if(id.equals(cBox.getValue("ID")) && pw.equals(cBox.getValue("PW"))) {
+			
+			Cookie c1 = CookieBox.createCookie("LOGIN", "SUCCESS", -1);
+			response.addCookie(c1);
+			
 			 if(ch == null){
-				 Cookie check = CookieBox.createCookie("CHECK", "no", 60*60*24*365);
+				 Cookie check = CookieBox.createCookie("CHECK", "no", 60*60*24*7);
 				 response.addCookie(check);
 				 Cookie c = CookieBox.createCookie("ID", id, -1);
 				 response.addCookie(c);
-				 response.sendRedirect("index.jsp");	
+				 response.sendRedirect("index.jsp");
 			}else {
-				Cookie check = CookieBox.createCookie("CHECK", "yes", 60*60*24*365);
+				Cookie check = CookieBox.createCookie("CHECK", "yes", 60*60*24*7);
 				response.addCookie(check);
-				Cookie c = CookieBox.createCookie("ID", id, 60*60*24*365);
+				Cookie c = CookieBox.createCookie("ID", id, 60*60*24*7);
 				response.addCookie(c);
-				response.sendRedirect("index.jsp");
+				out.println("<script> alert(\'아이디를 7일간 저장합니다.\'); location.href ='index.jsp'; </script>");
 			} 
 		}else {
 			out.println("<script> alert(\'아이디랑 패스워드를 확인하세요.\'); history.go(-1); </script>");
@@ -31,37 +35,3 @@
 	}
 
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Login Page</title>
-<link href="/mm/css/default.css" rel="stylesheet" type="text/css">
-<style>
-</style>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-</head>
-<body>
-
-	<div id="wrap">
-		<%-- header 시작 --%>
-		<%@ include file="../../frame/header.jsp"%>
-		<%-- header 끝 --%>
-
-		<%-- nav 시작 --%>
-		<%@ include file="../../frame/nav2.jsp"%>
-		<%-- nav 끝 --%>
-
-		<%-- contents 시작 --%>
-		<div id="contents">
-			
-		</div>
-		<%-- contents 끝 --%>
-
-		<%-- footer 시작 --%>
-		<%@ include file="../../frame/footer.jsp"%>
-		<%-- footer 끝 --%>
-
-	</div>
-</body>
-</html>
