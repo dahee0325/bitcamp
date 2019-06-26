@@ -3,7 +3,6 @@
 	pageEncoding="UTF-8"%>
 <%
 	CookieBox cBox = new CookieBox(request);
-	String id = request.getParameter("id");
 	String val = "";
 	
 	if(cBox.getValue("CHECK").equals("yes")) {
