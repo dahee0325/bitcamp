@@ -39,25 +39,28 @@
 
 		<%-- contents 시작 --%>
 		<div id="contents">
-			<h3>회원가입 요청 페이지</h3>
+			<h3>회원가입 페이지</h3>
 			<hr>
+			<%-- UserInfo에 정의되어있는 makeHtmlDiv() 메서드를 불러옴 --%>
+			<%= userInfo.makeHtmlDiv() %>
+			${ userInfo.makeHtmlDiv() }
 				<table>
 					<tr>
 						<td>아 이 디</td>
 						<%-- required : 필수사항--%>
-						<td><input type="text" name="id" value="<%= userInfo.getId() %>" required></td>
+						<td><%= userInfo.getId() %></td>
 					</tr>
 					<tr>
 						<td>비밀번호</td>
-						<td><input type="password" name="pw" value="<%= userInfo.getPw() %>" required></td>
+						<td><%= userInfo.getPw() %></td>
 					</tr>
 					<tr>
 						<td>이 름</td>
-						<td><input type="text" name="name" value="<%= userInfo.getName() %>" required></td>
+						<td><%= userInfo.getName() %></td>
 					</tr>
 					<tr>
 						<td>사 진</td>
-						<td><input type="file" value="<%= userInfo.getPhoto() %>" name="photo"></td>
+						<td><%= userInfo.getPhoto() %></td>
 					</tr>
 				</table>
 		</div>

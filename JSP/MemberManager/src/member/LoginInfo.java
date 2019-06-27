@@ -27,6 +27,12 @@ public class LoginInfo {
 		return photo;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "LoginInfo [id=" + id + ", name=" + name + ", photo=" + photo + "]";
+	}
+
 
 	
 	

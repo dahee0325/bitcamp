@@ -36,18 +36,21 @@
 		%>
 			<h3>My Page</h3>
 			<hr>
+			<%-- Map.get("loginInfo")와 같음 --%>
+			<%-- ${ sessionScope.loginInfo } : loginInfo에 저장된 데이터를 불러옴(LoginInfo에 있는 toString메서드를 불러와서 출력해줌) --%>
 			<form>
 				<table>
 					<tr>
 						<td>아 이 디</td>
-						<td><%= loginInfo.getId() %></td>
+						<td><%= loginInfo.getId() %> / ${sessionScope.loginInfo.id }</td>
 					</tr>
 						<td>이    름</td>
-						<td><%= loginInfo.getName() %></td>
+						<td><%= loginInfo.getName() %> / ${sessionScope.loginInfo.name }</td>
 					</tr>
 					<tr>
 						<td>사    진</td>
-						<td><img src="../img/<%= loginInfo.getPhoto() %>"></td>
+						<td><img src="../img/<%= loginInfo.getPhoto() %>">
+							<img src="../img/${sessionScope.loginInfo.photo }"></td>
 					</tr>
 				</table>
 			</form>
