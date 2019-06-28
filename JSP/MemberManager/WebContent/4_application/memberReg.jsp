@@ -30,11 +30,11 @@
 <body>
 	<div id="wrap">
 		<%-- header 시작 --%>
-		<%@ include file="../frame/member/header.jsp"%>
+		<%@ include file="../frame/application/a_header.jsp"%>
 		<%-- header 끝 --%>
 
 		<%-- nav 시작 --%>
-		<%@ include file="../frame/le_jstl/nav.jsp"%>
+		<%@ include file="../frame/application/a_nav.jsp"%>
 		<%-- nav 끝 --%>
 
 		<%-- contents 시작 --%>
@@ -42,6 +42,7 @@
 			<h3>회원가입 페이지</h3>
 			<hr>
 			<%-- UserInfo에 정의되어있는 makeHtmlDiv() 메서드를 불러옴 --%>
+			<%= userInfo.makeHtmlDiv() %>
 			${ userInfo.makeHtmlDiv() }
 				<table>
 					<tr>

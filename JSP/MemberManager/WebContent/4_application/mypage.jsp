@@ -20,12 +20,11 @@
 <body>
 	<div id="wrap">
 		<%-- header 시작 --%>
-		<%@ include file="../frame/member/header.jsp"%>
+		<%@ include file="../frame/application/a_header.jsp"%>
 		<%-- header 끝 --%>
 
 		<%-- nav 시작 --%>
-		<%@ include file="../frame/member/nav2.jsp"%>
-		<%-- nav 끝 --%>
+		<%@ include file="../frame/application/a_nav.jsp"%>
 		<%-- nav 끝 --%>
 
 		<%-- contents 시작 --%>

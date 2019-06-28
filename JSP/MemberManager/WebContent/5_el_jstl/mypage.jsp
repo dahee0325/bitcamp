@@ -16,11 +16,11 @@
 <body>
 	<div id="wrap">
 		<%-- header 시작 --%>
-		<%@ include file="../frame/member/header.jsp"%>
+		<%@ include file="../frame/el_jstl/el_header.jsp"%>
 		<%-- header 끝 --%>
 
 		<%-- nav 시작 --%>
-		<%@ include file="../frame/le_jstl/nav.jsp"%>
+		<%@ include file="../frame/el_jstl/el_nav.jsp"%>
 		<%-- nav 끝 --%>
 
 		<%-- contents 시작 --%>

@@ -14,21 +14,21 @@
 <body>
 	<div id="wrap">
 		<%-- header 시작 --%>
-		<%@ include file="frame/member/header.jsp"%>
+		<%@ include file="../frame/usebean/header.jsp"%>
 		<%-- header 끝 --%>
 		
 		<%-- nav 시작 --%>
-		<%@ include file="frame/member/nav.jsp"%>
+		<%@ include file="../frame/usebean/nav.jsp"%>
 		<%-- nav 끝 --%>
 		
 		<%-- contents 시작 --%>
 		<div id="contents">
-		<h3> 회원관리 프로그램의 메인 페이지 입니다.</h3>
+		<h3> [useBean] 회원관리 프로그램의 메인 페이지 입니다.</h3>
 		</div>
 		<%-- contents 끝 --%>
 		
 		<%-- footer 시작 --%>
-		<%@ include file="frame/member/footer.jsp"%>
+		<%@ include file="../frame/member/footer.jsp"%>
 		<%-- footer 끝 --%>
 		
 	</div>

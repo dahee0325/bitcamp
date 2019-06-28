@@ -1,17 +1,10 @@
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%
-	request.setCharacterEncoding("utf-8");
-	Date date = new Date();
-%>
-<jsp:useBean id="userInfo" class="member.UserInfo" scope="session"/>
-
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이페이지</title>
+<title>회원가입</title>
 <link href="/mm/css/default.css" rel="stylesheet" type="text/css">
 <style>
 </style>
@@ -20,39 +13,38 @@
 <body>
 	<div id="wrap">
 		<%-- header 시작 --%>
-		<%@ include file="../frame/member/header.jsp"%>
+		<%@ include file="../frame/el_jstl/el_header.jsp"%>
 		<%-- header 끝 --%>
 
 		<%-- nav 시작 --%>
-		<%@ include file="../frame/member/nav.jsp"%>
-		<%-- nav 끝 --%>
+		<%@ include file="../frame/el_jstl/el_nav.jsp"%>
 		<%-- nav 끝 --%>
 
 		<%-- contents 시작 --%>
 		<div id="contents">
-			<h3>My Page</h3>
+			<h3>Member Join</h3>
 			<hr>
-			<form>
+			<form action="memberReg.jsp" method="post">
 				<table>
 					<tr>
 						<td>아 이 디</td>
-						<td><%= userInfo.getId() %></td>
+						<%-- required : 필수사항--%>
+						<td><input type="email" name="id" placeholder="아이디 또는 이메일" required></td>
 					</tr>
 					<tr>
 						<td>비밀번호</td>
-						<td><%= userInfo.getPw() %></td>
+						<td><input type="password" name="pw" required></td>
 					</tr>
 					<tr>
 						<td>이    름</td>
-						<td><%= userInfo.getName() %></td>
+						<td><input type="text" name="name" required></td>
 					</tr>
 					<tr>
 						<td>사    진</td>
-						<td><%= userInfo.getPhoto() %></td>
+						<td><input type="file" name="photo"></td>
 					</tr>
 					<tr>
-						<td>가입시간</td>
-						<td><%= userInfo.getRegDate().format(date) %></td>
+						<td colspan="2"><input type="submit" value="회원가입"></td>
 					</tr>
 				</table>
 			</form>

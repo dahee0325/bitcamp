@@ -2,14 +2,11 @@
 <%@page import="java.util.Enumeration"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
-	//속성으로 들어오는 모든 데이터 저장
+
 	//Enumeration<String> : 이터레이터? 이전버전
 	Enumeration<String> e = application.getAttributeNames();
-	application.setAttribute("mListName", e);
+
 %>
 <!DOCTYPE html>
 <html>
@@ -24,7 +21,7 @@
 	}
 	
 	#table, #table td {
-		border: 1px soli d black;
+		border: 1px solid black;
 		border-collapse: collapse;
 	}
 	#table td {
@@ -45,11 +42,11 @@
 <body>
 	<div id="wrap">
 		<%-- header 시작 --%>
-		<%@ include file="../frame/member/header.jsp"%>
+		<%@ include file="../frame/application/a_header.jsp"%>
 		<%-- header 끝 --%>
 
 		<%-- nav 시작 --%>
-		<%@ include file="../frame/le_jstl/nav.jsp"%>
+		<%@ include file="../frame/application/a_nav.jsp"%>
 		<%-- nav 끝 --%>
 
 		<%-- contents 시작 --%>
@@ -62,29 +59,39 @@
 						<td>아이디</td>
 						<td>이름</td>
 						<td>비밀번호</td>
-						<td>가입일</td>
 						<td>이미지</td>
 						<td>관리</td>
 					</tr>
 					<!-- 리스트 반복 시작 -->
-					<%-- varStatus="status" : 를 사용하면 인덱스, 카운트를 사용할 수 있다. --%>
-					<c:forEach items="${mListName}" var="mId" varStatus="status">
-					<%-- mId 가 원본에서 @를 포함하는 문자열 이 있으면--%>
-					<c:if test="${fn:contains(mId, '@')}">
-					<%-- [mId]에 있는 키값을 가져옴 --%>
-					<c:set var="member" value="${ applicationScope[mId] }"/>
+					<%
+					int cnt=0;
+					
+					while(e.hasMoreElements()) {
+						
+						String name = e.nextElement();
+						
+						//객체를 받아옴
+						Object obj = application.getAttribute(name);
+						
+						//받아온 객체들을 형변환연산자로 확인(UserInfo 객체인지)
+						
+						if(obj instanceof UserInfo) {
+							UserInfo userinfo = (UserInfo)obj;
+					%>
 					<tr>
-						<td>${ status.count }</td>
-						<td>${ member.id }</td>
-						<td>${ member.name }</td>
-						<td>${ member.pw }</td>
-						<td><fmt:formatDate value="${loginInfo.regDate}" pattern="yyyy/MM/dd H:mm"/></td>
-						<td><img class="sumnail" alt="회원사진" src="../img/${ member.photo }"></td>
+						<td><%= ++cnt %></td>
+						<td><%= userinfo.getId() %></td>
+						<td><%= userinfo.getName() %></td>
+						<td><%= userinfo.getPw() %></td>
+						<td><img class="sumnail" alt="회원사진" src="../img/<%= userinfo.getPhoto() %>"></td>
 						<td><a href="#">수정</a> | <a href="#">삭제</a></td>
 					</tr>
-					</c:if>
-					</c:forEach>
+					<%
+						}
+						
+					}
 					
+					%>
 					<!-- 리스트 반복 종료 -->
 				</table>
 		</div>

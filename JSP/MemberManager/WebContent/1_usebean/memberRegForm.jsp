@@ -13,13 +13,13 @@
 <body>
 	<div id="wrap">
 		<%-- header 시작 --%>
-		<%@ include file="../frame/member/header.jsp"%>
+		<%@ include file="../frame/usebean/header.jsp"%>
 		<%-- header 끝 --%>
-
+		
 		<%-- nav 시작 --%>
-		<%@ include file="../frame/le_jstl/nav.jsp"%>
+		<%@ include file="../frame/usebean/nav.jsp"%>
 		<%-- nav 끝 --%>
-
+		
 		<%-- contents 시작 --%>
 		<div id="contents">
 			<h3>Member Join</h3>

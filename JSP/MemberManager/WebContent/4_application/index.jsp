@@ -4,51 +4,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login Page</title>
+<title>Main Page</title>
 <link href="/mm/css/default.css" rel="stylesheet" type="text/css">
 <style>
+
 </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
 	<div id="wrap">
 		<%-- header 시작 --%>
-		<%@ include file="../frame/member/header.jsp"%>
+		<%@ include file="../frame/application/a_header.jsp"%>
 		<%-- header 끝 --%>
 
 		<%-- nav 시작 --%>
-		<%@ include file="../frame/member/nav.jsp"%>
+		<%@ include file="../frame/application/a_nav.jsp"%>
 		<%-- nav 끝 --%>
-
+		
 		<%-- contents 시작 --%>
 		<div id="contents">
-			<h3>Login Page</h3>
-			<hr>
-			<form action="loginProcess.jsp" method="post">
-				<table>
-					<tr>
-						<td>아 이 디</td>
-						<td><input type="text" name="id"></td>
-					</tr>
-					<tr>
-						<td>비밀번호</td>
-						<td><input type="password" name="pw"></td>
-					</tr>
-					<tr>
-						<td colspan="2">아이디저장 <input id="ch" type="checkbox"></td>
-					</tr>
-					<tr>
-						<td colspan="2"><input type="submit" value="로그인"></td>
-					</tr>
-				</table>
-			</form>
+		<h3> [application] 회원관리 프로그램의 메인 페이지 입니다.</h3>
 		</div>
 		<%-- contents 끝 --%>
-
+		
 		<%-- footer 시작 --%>
 		<%@ include file="../frame/member/footer.jsp"%>
 		<%-- footer 끝 --%>
-
+		
 	</div>
 </body>
 </html>
