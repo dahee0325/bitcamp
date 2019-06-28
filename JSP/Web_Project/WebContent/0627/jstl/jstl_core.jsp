@@ -97,5 +97,18 @@
 	
 	결과값은 : ${ condition }
 	
+	<hr>
+	
+	<%-- url 사이에 param이라고 정의하고 pno이름으로 5값을 넣으면 url경로에 pno=5 값이 들어간다.--%>
+	<%-- http://localhost:8080/web/0619/member/list.jsp?pno=5 --%>
+	<c:url value="/0619/member/list.jsp" var="uri_mList">
+		<c:param name="pno">5</c:param>
+	</c:url>
+	<h3>
+		단순 출력 ${ uri_mList }<br>
+	     링크 연동1 : <a href="${ uri_mList }">회원 리스트</a><br>
+	     <%-- 단일태그로 사용하면 단순출력 --%>
+	     링크 연동2 : <a href="<c:url value='/0619/member/list.jsp'/>">회원 리스트</a><br>
+	</h3>
 </body>
 </html>
