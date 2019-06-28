@@ -18,7 +18,7 @@
 		<%-- header 끝 --%>
 		
 		<%-- nav 시작 --%>
-		<%@ include file="frame/member/nav2.jsp"%>
+		<%@ include file="frame/le_jstl/nav.jsp"%>
 		<%-- nav 끝 --%>
 		
 		<%-- contents 시작 --%>

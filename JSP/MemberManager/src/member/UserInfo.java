@@ -1,6 +1,7 @@
 package member;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class UserInfo {
 	
@@ -8,11 +9,11 @@ public class UserInfo {
 	private String pw;
 	private String name;
 	private String photo;
-	private SimpleDateFormat regDate;
+	private Date regDate;
 
 
 	public UserInfo() {
-		this.regDate = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+		this.regDate = new Date();
 	}
 
 	
@@ -21,7 +22,7 @@ public class UserInfo {
 		this.pw = pw;
 		this.name = name;
 		this.photo = photo;
-		this.regDate = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+		this.regDate = new Date();
 	}
 	
 	
@@ -54,12 +55,12 @@ public class UserInfo {
 	}
 
 
-	public SimpleDateFormat getRegDate() {
+	public Date getRegDate() {
 		return regDate;
 	}
 
 
-	public void setRegDate(SimpleDateFormat regDate) {
+	public void Date(Date regDate) {
 		this.regDate = regDate;
 	}
 
@@ -86,7 +87,7 @@ public class UserInfo {
 	public LoginInfo toLoginInfo() {
 		
 		//인스턴스 생성 후 반환
-		return new LoginInfo(id, name, photo);
+		return new LoginInfo(id, name, photo, regDate);
 	}
 
 
