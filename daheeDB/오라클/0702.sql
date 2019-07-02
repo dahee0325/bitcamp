@@ -51,3 +51,40 @@ select distinct deptno, job from emp;
 --deptno가 10인 dname을 출력
 select dname from dept where deptno = 10;
 select empno, ename,job from emp where deptno = 10;
+
+-- '' 안에 있는 값들은 대소문자를 구분하기때문에 조심해야한다
+select empno,job
+from emp
+where ename='SCOTT';
+
+-- 날짜 검색 : 날짜 데이터는 '' 로 묶어준다.
+-- 81/12/03 이후에 입사한사람 출력
+select ename, hiredate
+from emp
+where hiredate > '81/12/03';
+
+-- 논리연산 : AND, OR , NOT
+-- deptno 이 30이고 job이 'MANAGER' 인 데이터
+select * from emp where deptno = 30 and job = 'MANAGER';
+-- deptno 10 이거나 20 인 데이터
+select * from emp where deptno = 10 or deptno = 20;
+-- deptno 30 이 아닌 데이터 (10 번이나 20을 찾음)
+select * from emp where not deptno = 30;
+
+-- 컬럼명 BETWEEN A AND B 연산자 : 컬럼명에 있는 데이터가 A이상 B이하의 범위를 출력
+-- 초과 미만은 and연산을 사용해야함
+select * 
+from emp
+where sal between 2000 and 3000;
+-- where sal >= 2000 and sal <= 3000;
+
+-- 87년도 입사자 데이터 출력
+-- 범위 연산은 날짜 연산도 가능하다.
+select * from emp where hiredate between '1987/01/01' and '1987/12/31';
+
+-- IN : OR 조건이 많을 때 사용할 수 있다.
+-- comm 이 300이거나 500이거나 1400인 데이터를 출력
+select *
+from emp
+where comm in(300, 500, 1400);
+-- where comm = 300 or comm = 500 or comm = 1400;
