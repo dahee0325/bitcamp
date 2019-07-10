@@ -17,7 +17,6 @@ group by o.custid, c.name
 order by o.custid
 ;
 
-
 -- 인라인 뷰 : from 에서 사용되는 부속질의
 select *
 from customer
@@ -295,3 +294,15 @@ create sequence memberinfo_idx_seq;
 insert into memberinfo values (memberinfo_idx_seq.nextval, 'dada','4444','다다','', default);
 insert into memberinfo values (memberinfo_idx_seq.nextval, 'heee','5555','희희','', default);
 
+ROLLBACK;
+commit;
+
+select * from emp join dept using (deptno);
+
+select * from emp;
+DELETE emp
+where empno=7777;
+
+update emp set sal = 3000 where ename='SCOTT';
+
+select * from emp where ename='SCOTT';
