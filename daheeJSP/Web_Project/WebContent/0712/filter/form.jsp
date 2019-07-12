@@ -11,8 +11,9 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
-	<h1>
-		<%-- 현재 시간은 : <%= CURRENT_TIME %> --%>
-	</h1>
+	<h1>회원가입</h1>
+	<form action="reg.jsp" method="post">
+		이름<input type="text" name="name"> <input type="submit" value="가입">
+	</form>
 </body>
 </html>

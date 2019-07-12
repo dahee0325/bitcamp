@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import guestbook.model.Message;
+import jdbc.JdbcUtil;
 
 public class MessageDao {
 	
@@ -26,7 +27,7 @@ public class MessageDao {
 		int rCnt = 0;
 		PreparedStatement pstmt = null;
 		
-		String sql = "insert into guestbook_message (messge_id, guest_name, password, message) values(gm_mid_seq.nextval,?,?,?)";
+		String sql = "insert into guestbook_message (message_id, guest_name, password, message) values(gm_mid_seq.nextval,?,?,?)";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -82,6 +83,7 @@ public class MessageDao {
 		return message;
 	}
 
+	
 	public int selectCount(Connection conn) {
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -108,6 +110,7 @@ public class MessageDao {
 		return totalCnt;
 	}
 
+	
 	public List<Message> selectList(Connection conn, int firstRow, int endRow) {
 		
 		List<Message> list = new ArrayList<Message>();
@@ -143,5 +146,27 @@ public class MessageDao {
 		}
 		
 		return list;
+	}
+
+	public int deleteMessage(Connection conn, int messageId) throws SQLException {
+		
+		int resultCnt = 0;
+		// PreparedStatement 객체 생성
+		PreparedStatement pstmt = null;
+		
+		String sql = "delete from guestbook_message where message_id=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, messageId);
+			
+			resultCnt = pstmt.executeUpdate();
+		} finally {
+			//어떤 처리(오류가 나던 안나던)가 되어도 실행됨
+			JdbcUtil.close(pstmt);
+		}
+		
+		return resultCnt;
+		
 	}
 }

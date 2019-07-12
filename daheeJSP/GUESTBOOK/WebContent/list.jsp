@@ -37,7 +37,7 @@
 <body>
 	<h3>방명록 글쓰기</h3>
 	<hr>
-	<form action="writeMessage.jsp" method="get">
+	<form action="writeMessage.jsp" method="post">
 		<table>
 			<tr>
 				<td>이름</td>
@@ -71,7 +71,7 @@
 					메세지 번호 : <%= message.getId() %> <br>
 					손님 이름 : <%= message.getGuestName() %><br>
 					메세지 : <%= message.getMessage() %> <br>
-					<a href="#">삭제하기</a>
+					<a href="confirmDeletion.jsp?messageId=<%= message.getId() %>">삭제하기</a>
 				</div>		
 			<%
 			}

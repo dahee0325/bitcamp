@@ -13,7 +13,6 @@ public class MessageListView {
 	private int endRow;
 	
 	
-	
 	public MessageListView(int messageTotalCount, int currentPageNumber, List<Message> messageList, 
 			int messageCountPerPage, int firstRow, int endRow) {
 		super();

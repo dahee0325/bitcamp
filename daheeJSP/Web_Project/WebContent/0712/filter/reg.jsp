@@ -11,8 +11,6 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
-	<h1>
-		<%-- 현재 시간은 : <%= CURRENT_TIME %> --%>
-	</h1>
+	<%= request.getParameter("name") %>
 </body>
 </html>

@@ -10,4 +10,4 @@ CREATE SEQUENCE GM_MID_SEQ;
 
 select * from guestbook_message;
 
-select rownum, guest_name, message from guestbook_message;
+select rownum, message_id,guest_name, message from guestbook_message;
