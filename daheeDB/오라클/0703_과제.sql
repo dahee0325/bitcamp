@@ -499,10 +499,32 @@ where b.bookid = o.bookid and o.custid = c.custid and c.name = '박지성'
 ;
 
 --(2) 두 개 이상의 서로 다른 출판사에서 도서를 구매한 고객의 이름
+select c.name "고객명"
+from customer c, orders o, book b
+where c.custid = o.custid and b.bookid= o.bookid
+group by c.name
+having count(DISTINCT b.publisher) >= 2
+;
 
 --4 다음질의에대해DML 문을작성하시오.
---(1) 새로운도서(‘스포츠세계’, ‘대한미디어’, 10000원)이마당서점에입고되었다.
---    삽입이안될경우필요한데이터가더있는지찾아보자.
+--(1) 새로운도서(‘스포츠세계’, ‘대한미디어’, 10000원)이마당서점에입고되었다. 삽입이안될경우필요한데이터가더있는지찾아보자.
+insert into book values(11,'스포츠세계','대한미디어',10000);
+
 --(2) ‘삼성당’에서출판한도서를삭제해야한다.
+delete book
+where publisher = '삼성당'
+;
+
 --(3) ‘이상미디어’에서출판한도서를삭제해야한다. 삭제가안될경우원인을생각해보자.
+delete book
+where publisher = '이상미디어'
+;
+-- orders 테이블에서 book 테이블을 참조하고있어서 불가능
+
 --(4) 출판사‘대한미디어’가‘대한출판사’로이름을바꾸었다.
+update book
+set publisher = '대한출판사'
+where publisher = '대한미디어'
+;
+
+

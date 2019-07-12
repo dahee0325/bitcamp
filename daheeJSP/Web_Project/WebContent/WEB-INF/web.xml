@@ -41,6 +41,8 @@
       <include-prelude>/0624/action/common/footer.jspf</include-prelude>
     </jsp-property-group>
   </jsp-config>
+  
+  <!-- filter 사용 -->
   <filter>
     <filter-name>encodingFilter</filter-name>
     <filter-class>filter.CharacterEncodingFilter</filter-class>
@@ -49,4 +51,5 @@
     <filter-name>encodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  
 </web-app>
