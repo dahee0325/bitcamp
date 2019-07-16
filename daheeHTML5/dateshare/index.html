@@ -10,8 +10,12 @@
         margin: 0;
     }
     
-    #wrap {
-        background: linear-gradient(to top, #bde8fa, #ffd6dd );
+    html {
+        background: linear-gradient(to top, #bde8fa, #ffd6dd ) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
     }
     
     #main_wrap {
@@ -67,15 +71,12 @@
         color: #333;
     }
     
-    #content {
-        height: 500px;
-    }
-    
     #footer {
         font-size: 14px;
         text-align: center;
         padding: 20px;
     }
+    
 </style>
 <body>
    <div id="wrap">
@@ -88,7 +89,8 @@
             <ul>
                 <li><a href="#">FOOD</a></li>
                 <li><a href="#">ACTICITY</a></li>
-                <li><a href="#">영화</a></li>
+                <li><a href="#">MOVIE</a></li>
+                <li><a href="#">MESSAGE</a></li>
             </ul>  
         </div>
         <div id="content">

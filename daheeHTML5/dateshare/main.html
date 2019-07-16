@@ -10,13 +10,16 @@
         margin: 0;
     }
     
-    #wrap {
-        background: linear-gradient(to top, #bde8fa, #ffd6dd );
+    html {
+        background: linear-gradient(to top, #bde8fa, #ffd6dd ) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
     }
     
     #main_wrap {
         width:  980px;
-        height: 1000px;
         margin: auto;
         text-align: center;
     }
@@ -24,6 +27,7 @@
     #content {
         padding: 300px;
         width: 300px;
+        margin-top: -120px;
     }
     
     #content h1 {
@@ -35,24 +39,55 @@
         border: 0;
         border-bottom: solid 1px;
         width: 100%;
+        height: 20px;
+        font-size: 15px;
+        padding: 3px 0;
     }
     
     .input_b {
         width: 100%;
+        background-color: transparent;
+        border: solid 1px;
+        padding: 8px;
+    }
+    
+    .input_b:first-child {
+        margin-bottom: 8px;
+    }
+    
+    #form_wrap{
+        text-align: left;
+    }
+    
+    #form_wrap div {
+        padding: 5px 0;
+    }
+    
+    #logo {
+        text-align: left;
+        margin: 30px;
+        color: #676666;
     }
     
 </style>
 <body>
    <div id="wrap">
     <div id="main_wrap">
+        <h1 id="logo">DATE SHARE</h1>
         <div id="content">
             <h1>LOGIN</h1>
-            <div id="">
+            <div id="form_wrap">
             <form>
-                ID<input class="input_t" type="text"><br>
-                PW<input class="input_t" type="password"><br>
-                <input class="input_b" type="submit" value="로그인"><br>
-                <input class="input_b" type="submit" value="회원가입">
+                <div>
+                    ID<input class="input_t" type="text">
+                </div>
+                <div>
+                    PW<input class="input_t" type="password">
+                </div>
+                <div>
+                    <input class="input_b" type="submit" value="로그인">
+                    <input class="input_b" type="submit" value="회원가입">    
+                </div>
             </form>
             </div>
         </div>
