@@ -19,7 +19,6 @@ public class DeleteMessageService {
 	public static DeleteMessageService getInstance() {
 		return service;
 	}
-
 	
 	public int deleteMessage(int messageId, String password) throws SQLException, MessageNotFoundException, InvalidMessagePasswordException {
 		//성공적으로 실행이되면 성공된열에 대한 값을 리턴
@@ -61,7 +60,6 @@ public class DeleteMessageService {
 			
 			//3-2. 비밀번호가 일치하면 정상처리(삭제) 후 commit
 			resultCnt = dao.deleteMessage(conn, messageId);
-			
 			
 			
 			//정상처리가 된다면 커밋을 통해 저장
