@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="8" version="2.0">
+<workbench progressCount="14" version="2.0">
 <workbenchAdvisor/>
-<window height="1040" maximized="true" width="1189" x="0" y="0">
+<window height="1040" width="960" x="960" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -11,11 +11,12 @@
 <coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="99" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="com.tomato.devkit.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="53" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="53" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="114" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -29,6 +30,7 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
@@ -42,8 +44,11 @@
 <editor id="com.tomato.exerd.editor.DiagramEditor" name="bookstore.exerd" partName="bookstore.exerd" path="C:/Users/5CLASS-184/Documents/GitHub/bitcamp/eXERD/bookstore/bookstore.exerd" title="bookstore.exerd" tooltip="bookstore/bookstore.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/bookstore/bookstore.exerd"/>
 </editor>
-<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="movie.exerd" partName="movie.exerd" path="C:/Users/5CLASS-184/Documents/GitHub/bitcamp/eXERD/movieProject/movie.exerd" title="movie.exerd" tooltip="movieProject/movie.exerd" workbook="DefaultEditorWorkbook">
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="movie.exerd" partName="movie.exerd" path="C:/Users/5CLASS-184/Documents/GitHub/bitcamp/eXERD/movieProject/movie.exerd" title="movie.exerd" tooltip="movieProject/movie.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/movieProject/movie.exerd"/>
+</editor>
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="dateShare.exerd" partName="dateShare.exerd" title="dateShare.exerd" tooltip="C:\Users\5CLASS-184\Desktop\dateShare.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/Users/5CLASS-184/Desktop/dateShare.exerd"/>
 </editor>
 </editors>
 <views>
@@ -52,6 +57,15 @@
 <filters>
 <filter element=".*" isEnabled="false"/>
 </filters>
+<expanded>
+<element path="/bookstore"/>
+<element path="/eXERD-Samples"/>
+<element path="/movieProject"/>
+<element path="/test"/>
+</expanded>
+<selection>
+<element path="/bookstore"/>
+</selection>
 </viewState>
 </view>
 <view id="com.tomato.exerd.ui.views.thumbnail" partName="썸네일">
@@ -142,7 +156,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="bottomFolder" ratio="0.58515286" ratioLeft="536" ratioRight="380" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottomFolder" ratio="0.75858366" ratioLeft="707" ratioRight="225" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="com.tomato.exerd.ui.views.domain" appearance="2" expanded="2">
 <page content="com.tomato.exerd.ui.views.domain" label="도메인"/>
 <page content="com.tomato.exerd.validate.ui.ValidateView" label="검토"/>
@@ -174,6 +188,11 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/test/erd01.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/bookstore/bookstore.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/movieProject/movie.exerd"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" uri="file:/C:/Users/5CLASS-184/.JMAppsCfg"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/C:/Users/5CLASS-184/Desktop/dateShare.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/test/erd01.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/bookstore/bookstore.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/eXERD-Samples/study.exerd"/>
 </editors>
 <item historyLabel="study.exerd" index="0"/>
 <item historyLabel="erd01.exerd" index="1"/>
@@ -189,7 +208,19 @@
 <item historyLabel="bookstore.exerd" index="2"/>
 <item historyLabel="movie.exerd" index="3"/>
 <item historyLabel="bookstore.exerd" index="2"/>
-<item active="true" historyLabel="movie.exerd" index="3"/>
+<item historyLabel="movie.exerd" index="3"/>
+<item historyLabel=".JMAppsCfg" index="4">
+<position/>
+</item>
+<item historyLabel="movie.exerd" index="3"/>
+<item historyLabel="dateShare.exerd" index="5"/>
+<item historyLabel="erd01.exerd" index="6"/>
+<item historyLabel="movie.exerd" index="3"/>
+<item historyLabel="bookstore.exerd" index="7"/>
+<item historyLabel="study.exerd" index="8"/>
+<item historyLabel="dateShare.exerd" index="5"/>
+<item historyLabel="study.exerd" index="8"/>
+<item active="true" historyLabel="dateShare.exerd" index="5"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -207,6 +238,12 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="dateShare.exerd" tooltip="C:\Users\5CLASS-184\Desktop\dateShare.exerd">
+<persistable uri="file:/C:/Users/5CLASS-184/Desktop/dateShare.exerd"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name=".JMAppsCfg" tooltip="C:\Users\5CLASS-184\.JMAppsCfg">
+<persistable uri="file:/C:/Users/5CLASS-184/.JMAppsCfg"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="movie.exerd" tooltip="movieProject/movie.exerd">
 <persistable path="/movieProject/movie.exerd"/>
 </file>
